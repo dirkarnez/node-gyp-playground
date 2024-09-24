@@ -1,0 +1,53 @@
+name: NodeJS with Webpack
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'c*'
+      
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        node-version: [18.x]
+    runs-on: ${{ matrix.os }}
+    env:
+      targetZip: ${{ github.event.repository.name }}-${{ github.ref_name }}.zip
+    steps:
+    
+    - uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4.0.4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install -g node-gyp && \
+        npm install && \
+        node-gyp rebuild && \
+        ls
+      
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        type: 'zip'
+        directory: "build"
+        filename: "${{ env.targetZip }}"
+        
+    - name: Release prebuilt
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "build/${{ env.targetZip }}"
+        allowUpdates: true
+        token: ${{ secrets.GITHUB_TOKEN }}
