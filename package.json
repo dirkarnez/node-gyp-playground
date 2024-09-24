@@ -1,0 +1,27 @@
+{
+  "name": "node-gyp-playground",
+  "version": "0.6.0",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "run-script-os",
+    "test:darwin:linux": "jasmine test/**/*.js",
+    "test-keyboard": "node test/keyboard.js",
+    "test:win32": "jasmine test/**/*.js",
+    "install": "prebuild-install || node-gyp rebuild",
+    "install-debug": "prebuild-install || node-gyp rebuild --debug",
+    "prebuild": "prebuild --all"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "nan": "^2.14.2",
+    "prebuild-install": "^7.1.2"
+  },
+  "devDependencies": {
+    "jasmine": "^2.99.0",
+    "prebuild": "^13.0.1",
+    "run-script-os": "^1.0.3",
+    "tape": "^4.8.0",
+    "targetpractice": "0.0.7"
+  }
+}
