@@ -6,7 +6,7 @@
     ],
 
     'cflags': [
-      '-std=c11',
+      '-std=c++17',
       '-Wall',
       '-Wparentheses',
       '-Winline',
