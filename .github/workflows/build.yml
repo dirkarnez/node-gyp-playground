@@ -38,16 +38,11 @@ jobs:
       with:
         python-version: '3.10.8'
         
-    - name: Build
-      continue-on-error: true
-      run: npm install
-
-    - name: Build
-      continue-on-error: true
-      run: npm run-script prebuildify
-
-    - name: Build
-      continue-on-error: true
+    - run: npm install
+    
+    - run: npm run-script prebuildify
+    
+    - working-directory: prebuilds
       run: ls
       
     - name: Archive Release
