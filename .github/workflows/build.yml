@@ -24,7 +24,7 @@ jobs:
         node-version: [22.x]
     runs-on: ${{ matrix.os }}
     env:
-      targetZip: ${{ github.event.repository.name }}-node-${{ matrix.node-version }}-${{ matrix.os }}${{ github.ref_name }}.zip
+      targetZip: ${{ github.event.repository.name }}-node-${{ matrix.node-version }}-${{ matrix.os }}-${{ github.ref_name }}.zip
     steps:
     
     - uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
     - run: npm run-script prebuildify
     
     - working-directory: prebuilds
-      run: ls
+      run: ls -R
       
     - name: Archive Release
       uses: thedoctor0/zip-release@master
