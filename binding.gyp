@@ -2,10 +2,11 @@
   'targets': [{
     'target_name': 'node-gyp-playground',
     'include_dirs': [
-        "<!(node -e \"require('nan')\")"
+        "src"
     ],
     
     'cflags': [
+      '-std=c11',
       '-Wall',
       '-Wparentheses',
       '-Winline',
@@ -52,6 +53,10 @@
     ],
     
     'sources': [
+      "bindings/node/binding.cc",
+      "src/parser.c",
+      "src/scanner.c",
+
       'src/robotjs.cc',
       'src/deadbeef_rand.c',
       'src/mouse.c',
