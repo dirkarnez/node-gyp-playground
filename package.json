@@ -5,7 +5,7 @@
   "typings": "index.d.ts",
   "scripts": {
     "install": "node-gyp-build",
-    "prebuildify": "prebuildify --all --strip"
+    "prebuildify": "prebuildify --strip"
   },
   "gypfile": true,
   "dependencies": {
