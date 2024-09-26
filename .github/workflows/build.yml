@@ -17,7 +17,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, ubuntu-latest, macos-13]
         node-version: [22.x]
     runs-on: ${{ matrix.os }}
     env:
