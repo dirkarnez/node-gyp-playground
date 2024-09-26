@@ -4,7 +4,7 @@
     'include_dirs': [
         "src"
     ],
-    
+
     'cflags': [
       '-std=c11',
       '-Wall',
@@ -40,11 +40,7 @@
             '-lX11',
             '-lXtst'
           ]
-        },
-        
-        'sources': [
-          'src/xdisplay.c'
-        ]
+        }
       }],
 
       ["OS=='win'", {
@@ -53,19 +49,7 @@
     ],
     
     'sources': [
-      "bindings/node/binding.cc",
-      "src/parser.c",
-      "src/scanner.c",
-
-      'src/robotjs.cc',
-      'src/deadbeef_rand.c',
-      'src/mouse.c',
-      'src/keypress.c',
-      'src/keycode.c',
-      'src/screen.c',
-      'src/screengrab.c',
-      'src/snprintf.c',
-      'src/MMBitmap.c'
+      'src/sum.cpp'
     ]
   }]
 }
