@@ -10,11 +10,7 @@
 
     'cflags_cc': [
       '-std=c++17',
-      '-Wall',
-      '-Wparentheses',
-      '-Winline',
-      '-Wbad-function-cast',
-      '-Wdisabled-optimization'
+      '-Wall'
     ],
 
     'sources': [
