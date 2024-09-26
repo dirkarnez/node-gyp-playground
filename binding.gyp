@@ -1,4 +1,7 @@
 {
+  'variables': {
+    'openssl_fips':'false',
+  },
   'targets': [{
     'target_name': 'node-gyp-playground',
     'include_dirs': [
