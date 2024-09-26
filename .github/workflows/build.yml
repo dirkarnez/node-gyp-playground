@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
-        node-version: [18.x]
+        node-version: [22.x]
     runs-on: ${{ matrix.os }}
     env:
       targetZip: ${{ github.event.repository.name }}-${{ github.ref_name }}.zip
@@ -38,15 +38,11 @@ jobs:
         
     - name: Build
       continue-on-error: true
-      run: npm install -g node-gyp
-      
-    - name: Build
-      continue-on-error: true
       run: npm install
 
     - name: Build
       continue-on-error: true
-      run: node-gyp rebuild
+      run: npm run-script prebuildify
 
     - name: Build
       continue-on-error: true
