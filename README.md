@@ -11,6 +11,9 @@ Modified from [octalmage/robotjs: Node.js Desktop Automation.](https://github.co
 ### Projects
 - [**erjigit17/habra_palindromes: для статьи**](https://github.com/erjigit17/habra_palindromes)
 - [**magiclen/node-fast-string-search: Fast search substrings in a string by using N-API and boyer-moore-magiclen.**](https://github.com/magiclen/node-fast-string-search)
+- [oracle/node-oracledb: Oracle Database driver for Node.js maintained by Oracle Corp.](https://github.com/oracle/node-oracledb)
+- [lovell/sharp: High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, AVIF and TIFF images. Uses the libvips library.](https://github.com/lovell/sharp)
+
 
 ### Node API
 - [Node-API | Node.js v22.9.0 Documentation](https://nodejs.org/api/n-api.html#prebuildify)
